@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gadgets Store</title>
+	<script type="text/javascript" src="JS/hompage.js"></script>
+
+	<style type="text/css">
+		.store-item{
+			text-align: left;
+			/*width: 200px;
+			height: 200px;
+			background-color: gold;*/
+			margin: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid black;
+			/*overflow: auto;*/
+			display: inline-block;
+
+		}
+
+
+		.danish{
+			display: none;
+		}
+
+		.blue{
+			display: none;
+		}
+
+		.donut{
+			display: none;
+		}
+
+		.sausage{
+			display: none;
+		}
+
+		.tuna{
+			display: none;
+		}
+
+		.croissant{
+			display: none;
+		}
+
+
+		.cartpos {
+		  position: relative;
+		  left: 750px;
+		  border: 3px solid #73AD21;
+		}
+
+		.store-items{
+			text-align: center;
+
+		}
+
+		.store-item-image{
+			height: 250px;
+			width: 250px;
+		}
+
+		.store-item-title{
+			text-align: center;
+			font-weight: bold;
+			font-size: 18px;
+			width: 100%;
+		}
+
+		.cart-item-image{
+			width: 100px;
+			height: 100px;
+		}
+
+		.cart-item-price-base{
+			display: none;
+		}
+
+
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<body onload="ready()" style="background-color:skyblue;">
+<center>
+	<div class="container">
+		
+	<nav style="position: fixed;" class="navbar navbar-expand-lg navbar-light bg-light">
+		 	 <ul class="navbar-nav">
+		 	 	<li class="nav-item">
+		 	 		<h3>Alex's Bakery</h3> 
+		 	 	</li>
+
+					<!-- <a class="nav-link" href="#"> -->
+					<li class="nav-item" >
+						<button class = "btn btn-primary cartpos" data-toggle = "modal" data-target = "#orderModal" onclick="disableButoon()"> View Cart </button>
+					</li>
+
+					<!-- </a> -->
+					<li class="nav-item">
+						<button class = "btn btn-primary cartpos"  onclick="logOutFunction()">username</button>
+					</li>
+			</ul>
+	</nav>
+				<div class="modal fade" id="orderModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5>Cart Summary</h5>
+				</div>
+
+				<div class="modal-body">
+					<div class="cart-items">
+				</div>
+			
+
+				<div class="modal-footer">
+					<span class="cart-total-price">Php 0.00</span>
+					<button id="checkout" onload="onLoadDisable()" onclick="PurchaseFunction()">checkout</button>
+				</div>
+				</div>
+			</div>
+
+		</div>
+</div>
+
+		
+		<br>
+
+
+		<table class="gadgets table"><tr><td>
+		<span><center><h2>Sweet </h2></center></span>
+
+		<div class="store-items">
+			
+			<div class="store-item">
+				<div class="store-item-title">Danish</div>
+				<img id="pastry1" class="store-item-image" src="image//products/danish.jpg"  onclick="updateDetailsS1()" data-toggle = "modal" data-target = "#movieID">
+				<div class="store-item-details">
+					<span class="store-item-price">Php 139.00</span><br>
+					<button id="btn1" class="store-item-button" onclick="addedToCartFunction1()">ADD TO CART</button>
+				</div>
+			
+			</div>
+
+			<div class="store-item">
+				<div class="store-item-title">Blueberry cupcake</div>
+				<img id="pastry2" class="store-item-image" src="image/products/blueberry-cupcake.jpg" onclick="updateDetailsS2()" data-toggle = "modal" data-target = "#movieID">
+				<div class="store-item-details">
+					<span class="store-item-price">Php 79.00</span><br>
+					<button id="btn2" class="store-item-button" onclick="addedToCartFunction2()">ADD TO CART</button>
+				</div>
+			</div>
+
+			<div class="store-item">
+				<div class="store-item-title">Sugar Glazed Doughnut</div>
+				<img id="pastry3" class="store-item-image" src="image/products/classic-doughnut.jpg" onclick="updateDetailsS3()" data-toggle = "modal" data-target = "#movieID">
+				<div class="store-item-details">
+					<span class="store-item-price">Php 49.00</span><br>
+					<button id="btn3" class="store-item-button" onclick="addedToCartFunction3()">ADD TO CART</button>
+				</div>
+			</div>
+
+		</div>
+
+		</td></tr></table>
+
+				<table class="gadgets table"><tr><td>
+		<span><center><h2>Savory </h2></center></span>
+
+		<div class="store-items">
+
+			<div class="store-item">
+				<div class="store-item-title">Sausage roll</div>
+				<img id="pastry4" class="store-item-image" src="image/products/sausage-roll.jpg"  onclick="updateDetailsS4()" data-toggle = "modal" data-target = "#movieID">
+				<div class="store-item-details">
+					<span class="store-item-price">Php 40.00</span><br>
+					<button id="btn4" class="store-item-button" onclick="addedToCartFunction4()">ADD TO CART</button>
+				</div>
+				
+			</div>
+
+			<div class="store-item">
+				<div class="store-item-title">Crispy Tuna pie</div>
+				<img id="pastry5" class="store-item-image" src="image/products/tuna-pie-.jpg" onclick="updateDetailsS5()" data-toggle = "modal" data-target = "#movieID">
+				<div class="store-item-details">
+					<span class="store-item-price">Php 59.00</span><br>
+					<button id="btn5" class="store-item-button" onclick="addedToCartFunction5()">ADD TO CART</button>
+				</div>
+			</div>
+
+			<div class="store-item">
+				<div class="store-item-title">Croissant</div>
+				<img id="pastry6" class="store-item-image" src="image/products/croissant.jpg" onclick="updateDetailsS6()" data-toggle = "modal" data-target = "#movieID">
+				<div class="store-item-details">
+					<span class="store-item-price">Php 85.00</span><br>
+					<button id="btn6" class="store-item-button" onclick="addedToCartFunction6()">ADD TO CART</button>
+				</div>
+			</div>
+
+		</div>
+
+		</td></tr></table>
+
+		<!-- MOVIE MODAL -->
+  <div class="modal fade movieModalDiv" id="movieID">
+    <div class="modal-dialog ">
+      <!-- WHOLE MODAL -->
+      <div class="modal-content ">
+        <!-- HEADER OF THE MODAL: Title -->
+        <div class = "modal-header ">
+          <span class="movieTitle"></span>
+        </div>
+        <!-- BODY OF THE MODAL -->
+        <div class="modal-body ">
+         	<span class="movieDesc"></span>
+        </div>
+        <!-- FOOTER OF THE MODAL: Price -->
+        <div class="modal-footer">
+          		
+        </div>
+      </div>
+    </div>
+  </div>
+		
+
+
+<div class ="danish">
+<span class="movTitle">Danish</span>
+<span class="movDesc">
+	a multilayered, laminated sweet pastry in the viennoiserie tradition.</span>
+</div>
+
+<div class ="blue">
+<span class="movTitle">Blueberry Cupcake</span>
+<span class="movDesc"> 
+	Fresh blueberries are mixed into vanilla cake -- rather than muffin -- batter, which is then topped with cinnamon streusel and swirls of blueberry-cream cheese icing.</span>
+</div>
+
+<div class ="donut">
+<span class="movTitle">Sugar Glazed Doughnut</span>
+<span class="movDesc"> 
+Classic plain Doughnut glazed with sugar. Perfect for any snack of the day.
+</span>
+</div>
+
+<div class ="sausage">
+<span class="movTitle">Sausage roll</span>
+<span class="movDesc">
+Puff pastry wrapped around a sausage.</span>
+</div>
+
+<div class ="tuna">
+<span class="movTitle">Crispy Tuna pie</span>
+<span class="movDesc">
+A Filipino type of pie made with tuna filling enclosed on a crispy pie pastry
+</div>
+
+<div class ="croissant">
+<span class="movTitle">Croissant</span>
+<span class="movDesc">
+	A buttery, flaky, crescent-shaped viennoiserie pastry</span>
+</div>
+
+
+
+
+</div>
+</center>	
+<a href="index.html"><button>Back</button></a>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ORDER FORM</title>
+
+</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="JS/hompage.js"></script>
+	<style type="text/css">
+		.form-pos{
+			text-align: left;
+			position: top;
+		}
+	</style>
+</head>
+<body onload="onLoadItemsRedirectPage()">
+
+	<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		 	 <ul class="navbar-nav">
+		 	 	<li class="nav-item">
+		 
+		 	 	</li>
+			<li class="nav-item active">
+				<li><button class = "btn btn-primary cartpos" data-toggle = "modal" onclick="logOutFunction()"> username </button>
+				</li>
+
+			</li>
+			</ul>
+<!-- Modal-->
+		<!--<div id="modalSample" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<div class="input-group-text">Username</div>
+			</div>
+				<input type="text" class="form-control" name="">
+		</div>
+		<!-- modal content footer -->
+			<!--<div>
+				<button data-dismiss="modal">Submit</button>
+			</div>
+				</div>
+			</div>
+		</div>-->
+
+
+</nav>
+
+
+<table><tr><td>
+	<div class="item-purchased" onload="totalPrice()">
+
+
+
+		<!-- 
+			<div>
+				<span>TITLE</span>
+				<span>PRICE</span>
+			</div>
+
+			<div>
+				<span>TITLE</span>
+				<span>PRICE</span>
+			</div> -->
+
+
+
+	</div>
+</td></tr></table>
+<br>
+<table><tr><td>
+		<form class="form-pos">
+			<input type="checkbox" name="" id="user" onclick="sameAsUser()" ondblclick="sameAsUser1()">same as user
+			<br>
+			Recipient Name:
+			<br>
+			<input type="text" name="" id="fname" placeholder="enter first name">
+			<br>
+			<input type="text" name="" id="lname" placeholder="enter last name">
+			<br><br>
+			Shipping Address:
+			<br>
+			<input type="text" name="" id="addr1" placeholder="Address line 1">
+			<br>
+			<input type="text" name="" id="addr2" placeholder="Address line 2">
+			<br><br>
+			Shipping location:
+			<br>
+			<select id="ship">
+				<option value="Region">Region/City</option>
+				<option value="Region">NCR/Manila City (Php 100)</option>
+				<option value="Region">NCR/Makati City (Php 200)</option>
+				<option value="Region">NCR/Quezon City (Php 300)</option>
+			</select>
+		</form>
+			<button onclick="placeOrderFunction()">Place Order</button>
+		
+</td></tr></table>
+
+
+</div>
+<a style="text-align: bottom;" href="homepage.html"><button class="btn-danger">HOME</button></a>
+</body>
+</html>
